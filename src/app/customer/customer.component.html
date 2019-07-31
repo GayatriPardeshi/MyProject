@@ -1,0 +1,36 @@
+<p>
+  customer works!
+</p>
+<!-- 
+<table style ="align:center">
+  <tr>
+    <th>firstName</th>
+    <th>lastName</th>
+    <th>address</th>
+    <th>phoneNumber</th>
+  </tr>
+  <tr *ngFor="let object of customer">
+    <td>{{object.firstName}}</td>
+    <td>{{object.lastName}}</td>
+    <td>{{object.address}}</td>
+    <td>{{object.phoneNumber}}</td>
+  </tr>
+</table> -->
+<!-- <ng-template [ngIF]="status then hello"></ng-template>
+<ng-template #hello>lllllllllllllllll</ng-template> -->
+
+<mat-table [dataSource]="customer" class="tabledesign">
+  <ng-container matColumnDef="CustomerName">
+    <th mat-header-cell *matHeaderCellDef> firstName </th>
+    <td mat-cell *matCellDef="let user"> {{user.firstName}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="CustomerLName">
+    <th mat-header-cell *matHeaderCellDef> lastName </th>
+    <td mat-cell *matCellDef="let user"> {{user.lastName}} </td>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="tableColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: tableColumns"></mat-row>
+
+</mat-table>
