@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+* {
+  box-sizing: border-box;
+}
+
+
+mat-card-title.mat-card-title {
+    background-color: #daa5205c;
+}
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+    opacity: 0.3;
+}
+button[matdialogclose] i {
+    color: rgba(169,169,169,1);
+  }
+
+  .toast-panel {
+    top: 1rem;
+    right: 1rem;
+    max-width: 20rem;
+}

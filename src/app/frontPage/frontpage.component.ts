@@ -4,19 +4,19 @@ import { MatTableDataSource, MatSort } from '@angular/material';
 import { Employee } from '../models/employee';
 
 @Component({
-  selector: 'front-page',
+  selector: 'app-front-page',
   templateUrl: './frontpage.component.html',
   styleUrls: ['./frontpage.component.css']
 })
-export class frontpageComponent {
+export class FrontpageComponent {
   title = 'Welcome to Angular 5';
   public customer: MatTableDataSource<Employee>;
-  public tableColumns: string[] = ['idcustomer','firstName','lastName','age','address','phoneNumberl'];
+  public tableColumns: string[] = ['idcustomer', 'firstName', 'lastName', 'age', 'address', 'phoneNumberl'];
   constructor(private custService: CustomerService) {
     this.customer = new MatTableDataSource<Employee>([]);
    }
 
-ngOnInit() {
+OnInit() {
   this.custService.getCustomerbyAPI()
   .subscribe((resp: Employee[]) => {
     this.customer = new MatTableDataSource<Employee>(resp);
@@ -31,7 +31,7 @@ ngOnInit() {
         console.log(resp);
       }
 
-      )
+      );
 
 
   }

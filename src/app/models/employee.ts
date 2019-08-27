@@ -4,6 +4,6 @@ export class Employee {
   lastName: string;
   age: number;
   address: string;
-  phoneNumberl: number
+  phoneNumberl: number;
   }
 
