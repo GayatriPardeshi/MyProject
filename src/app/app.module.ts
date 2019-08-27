@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { frontpageComponent } from './frontPage/frontpage.component';
+import { FrontpageComponent } from './frontPage/frontpage.component';
 import { MatButtonModule, MatTableModule, MatDialogModule} from '@angular/material';
 
 
@@ -37,7 +37,7 @@ import { environment } from '../environments/environment';
 @NgModule({
   declarations: [
     AppComponent,
-    frontpageComponent,
+    FrontpageComponent,
     DashboardComponent,
     MyDerictiveDirective,
     CustomerComponent,
@@ -64,11 +64,11 @@ import { environment } from '../environments/environment';
     RouterModule.forChild([
       {
         path: 'users',
-        component: frontpageComponent
+        component: FrontpageComponent
       },
       {
         path: 'users/:idcustomer',
-        component: frontpageComponent
+        component: FrontpageComponent
       },
       {
         path: 'login',
