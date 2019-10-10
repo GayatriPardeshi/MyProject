@@ -6,17 +6,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { FrontpageComponent } from './frontPage/frontpage.component';
-import { MatButtonModule, MatTableModule, MatDialogModule} from '@angular/material';
+//import { MatButtonModule, MatTableModule, MatDialogModule, MatSelect, MatSelectModule, MatDatepickerModule} from '@angular/material';
 
 
 import {
+  MatButtonModule, MatTableModule, MatDialogModule, MatSelect, MatSelectModule, MatDatepickerModule, MatNativeDateModule,
   MatMenuModule,
   MatToolbarModule,
   MatIconModule,
   MatCardModule,
   MatFormFieldModule ,
   MatInputModule,
-
 } from '@angular/material';
 import { AgmCoreModule } from '@agm/core';
 
@@ -32,6 +32,9 @@ import { MapComponent } from './map/map.component';
 import { ToastNotificationsModule } from 'ngx-toast-notifications';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { BookingComponent } from './booking/booking.component';
+
+
 
 
 @NgModule({
@@ -42,7 +45,8 @@ import { environment } from '../environments/environment';
     MyDerictiveDirective,
     CustomerComponent,
     LoginComponent,
-    MapComponent
+    MapComponent,
+    BookingComponent,
   ],
   imports: [
     BrowserModule,
@@ -60,6 +64,9 @@ import { environment } from '../environments/environment';
     BrowserAnimationsModule,
     MatInputModule,
     MatDialogModule,
+    MatSelectModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     ToastNotificationsModule.forRoot(),
     RouterModule.forChild([
       {
@@ -90,6 +97,7 @@ import { environment } from '../environments/environment';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
 
   ],
+  entryComponents: [BookingComponent],
   exports: [MatButtonModule, MatTableModule],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]

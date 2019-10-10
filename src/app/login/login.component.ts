@@ -35,10 +35,6 @@ export class LoginComponent implements OnInit {
       });
       this.router.navigateByUrl('/users');
     } else {
-
-
-
-
       const type = this.types[1];
       this.toaster.open({
         text: this.textFail,

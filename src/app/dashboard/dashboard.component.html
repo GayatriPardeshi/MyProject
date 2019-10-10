@@ -1,20 +1,74 @@
-<mat-toolbar [style.backgroundColor] = "navBarColor" color="primary">
-    <span>
-      <img src="assets/img/logo.jpg" class="angular-logo">
-    </span>
-    <span class="fill-remaining-space"></span>
-    <nav 
-    class="navbar navbar-default">
-        <div class="container-fluid">
-          <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <button mat-button (click)="openDialog()">Login</button>
-                <button mat-button (click)="onLogout()">Logout</button> 
-                  <a routerLink="/map">Map</a>
-            </ul>
-          </div>
-        </div>
-      </nav>
-   
-  </mat-toolbar>
-  <p *ngIf= "logout" >Logout successfully!!!</p>
+<span>
+  <img src="assets/img/Airlogo.jpg" class="angular-logo">
+
+</span>
+
+<mat-toolbar [style.backgroundColor]="navBarColor" color="primary">
+  <span class="fill-remaining-space"></span>
+  <span class="header">Welcome To AirWays!!!</span>
+  <nav class="navbar navbar-default">
+
+    <div class="container-fluid">
+
+      <div class="collapse navbar-collapse">
+
+        <ul class="nav navbar-nav">
+          <button mat-button (click)="openDialog()">Login</button>
+          <button mat-button (click)="onLogout()">Logout</button>
+          <a routerLink="/map">Map</a>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</mat-toolbar>
+<!-- <img src="assets/img/jet1.jpg" class="jetImg"> -->
+
+<mat-form-field>
+  <mat-label>Source</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let source of srcDistiArray" [value]="source.Id">
+      {{source.SourceCity}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Destination</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let desti of srcDistiArray" [value]="desti.Id">
+      {{desti.DestinationCity}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field>
+  <input matInput  [matDatepicker]="picker" [min]="minDate" [max]="maxDate" placeholder="Choose a date">
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker startView="year"></mat-datepicker>
+</mat-form-field>
+<img src="assets/img/searchIcon.png" height="40px" height="40px" (click)="bookingDialog()">
+Book
+
+
+<!-- <select class="form-control col-md-10">
+      <option value="" selected>Source</option>
+      <option *ngFor="let source of srcDistiArray">
+        {{source.SourceCity}}
+      </option>
+    </select> -->
+
+
+
+<p *ngIf="logout">Logout successfully!!!</p>
+<nav class="navbar navbar-default footer">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <a href="/">Home</a> |
+        <a href="/">Contact Us</a> |
+        <a href="/">Help</a>
+        <span style="margin-left: 13%">Copyright © 2019-2020 AirWays Group. All rights reserved</span>
+      </ul>
+    </div>
+  </div>
+</nav>
